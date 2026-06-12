@@ -226,10 +226,10 @@ const EARN_AMOUNT = 150;
 const EARN_REQUIRED_MESSAGES = 50;
 const EARN_WINDOW_HOURS = 12;
 const EARN_MAX_PER_WINDOW = 2;
-const DAILY_BASE_AMOUNT = 10;
+const DAILY_BASE_AMOUNT = 100;
 const DAILY_STREAK_BONUS_EVERY = 3;
-const DAILY_STREAK_BONUS = 1;
-const DAILY_STREAK_MAX_BONUS = 10;
+const DAILY_STREAK_BONUS = 10;
+const DAILY_STREAK_MAX_BONUS = 100;
 const MAX_BET = 50_000;
 
 let currencyEmoji = "R$";
@@ -255,34 +255,34 @@ const pendingDuels = new Map();
 
 const ANIMALS = {
   // Common (10)
-  dog:      { key: "dog",      name: "Dog",      emoji: "🐶", rarity: "Common",    value: 25 },
-  cat:      { key: "cat",      name: "Cat",      emoji: "🐱", rarity: "Common",    value: 25 },
-  rabbit:   { key: "rabbit",   name: "Rabbit",   emoji: "🐰", rarity: "Common",    value: 25 },
-  hamster:  { key: "hamster",  name: "Hamster",  emoji: "🐹", rarity: "Common",    value: 25 },
-  mouse:    { key: "mouse",    name: "Mouse",    emoji: "🐭", rarity: "Common",    value: 25 },
-  turtle:   { key: "turtle",   name: "Turtle",   emoji: "🐢", rarity: "Common",    value: 25 },
-  bird:     { key: "bird",     name: "Bird",     emoji: "🐦", rarity: "Common",    value: 25 },
-  fish:     { key: "fish",     name: "Fish",     emoji: "🐟", rarity: "Common",    value: 25 },
-  frog:     { key: "frog",     name: "Frog",     emoji: "🐸", rarity: "Common",    value: 25 },
-  chick:    { key: "chick",    name: "Chick",    emoji: "🐥", rarity: "Common",    value: 25 },
+  dog:      { key: "dog",      name: "Dog",      emoji: "🐶", rarity: "Common",    value: 20 },
+  cat:      { key: "cat",      name: "Cat",      emoji: "🐱", rarity: "Common",    value: 20 },
+  rabbit:   { key: "rabbit",   name: "Rabbit",   emoji: "🐰", rarity: "Common",    value: 20 },
+  hamster:  { key: "hamster",  name: "Hamster",  emoji: "🐹", rarity: "Common",    value: 20 },
+  mouse:    { key: "mouse",    name: "Mouse",    emoji: "🐭", rarity: "Common",    value: 20 },
+  turtle:   { key: "turtle",   name: "Turtle",   emoji: "🐢", rarity: "Common",    value: 20 },
+  bird:     { key: "bird",     name: "Bird",     emoji: "🐦", rarity: "Common",    value: 20 },
+  fish:     { key: "fish",     name: "Fish",     emoji: "🐟", rarity: "Common",    value: 20 },
+  frog:     { key: "frog",     name: "Frog",     emoji: "🐸", rarity: "Common",    value: 20 },
+  chick:    { key: "chick",    name: "Chick",    emoji: "🐥", rarity: "Common",    value: 20 },
   // Rare (8)
-  fox:      { key: "fox",      name: "Fox",      emoji: "🦊", rarity: "Rare",      value: 50 },
-  wolf:     { key: "wolf",     name: "Wolf",     emoji: "🐺", rarity: "Rare",      value: 50 },
-  panda:    { key: "panda",    name: "Panda",    emoji: "🐼", rarity: "Rare",      value: 50 },
-  raccoon:  { key: "raccoon",  name: "Raccoon",  emoji: "🦝", rarity: "Rare",      value: 50 },
-  otter:    { key: "otter",    name: "Otter",    emoji: "🦦", rarity: "Rare",      value: 50 },
-  koala:    { key: "koala",    name: "Koala",    emoji: "🐨", rarity: "Rare",      value: 50 },
-  hedgehog: { key: "hedgehog", name: "Hedgehog", emoji: "🦔", rarity: "Rare",      value: 50 },
-  sloth:    { key: "sloth",    name: "Sloth",    emoji: "🦥", rarity: "Rare",      value: 50 },
+  fox:      { key: "fox",      name: "Fox",      emoji: "🦊", rarity: "Rare",      value: 30 },
+  wolf:     { key: "wolf",     name: "Wolf",     emoji: "🐺", rarity: "Rare",      value: 30 },
+  panda:    { key: "panda",    name: "Panda",    emoji: "🐼", rarity: "Rare",      value: 30 },
+  raccoon:  { key: "raccoon",  name: "Raccoon",  emoji: "🦝", rarity: "Rare",      value: 30 },
+  otter:    { key: "otter",    name: "Otter",    emoji: "🦦", rarity: "Rare",      value: 30 },
+  koala:    { key: "koala",    name: "Koala",    emoji: "🐨", rarity: "Rare",      value: 30 },
+  hedgehog: { key: "hedgehog", name: "Hedgehog", emoji: "🦔", rarity: "Rare",      value: 30 },
+  sloth:    { key: "sloth",    name: "Sloth",    emoji: "🦥", rarity: "Rare",      value: 30 },
   // Epic (5)
-  lion:     { key: "lion",     name: "Lion",     emoji: "🦁", rarity: "Epic",      value: 100 },
-  tiger:    { key: "tiger",    name: "Tiger",    emoji: "🐯", rarity: "Epic",      value: 100 },
-  eagle:    { key: "eagle",    name: "Eagle",    emoji: "🦅", rarity: "Epic",      value: 100 },
-  elephant: { key: "elephant", name: "Elephant", emoji: "🐘", rarity: "Epic",      value: 100 },
-  rhino:    { key: "rhino",    name: "Rhino",    emoji: "🦏", rarity: "Epic",      value: 100 },
+  lion:     { key: "lion",     name: "Lion",     emoji: "🦁", rarity: "Epic",      value: 65 },
+  tiger:    { key: "tiger",    name: "Tiger",    emoji: "🐯", rarity: "Epic",      value: 65 },
+  eagle:    { key: "eagle",    name: "Eagle",    emoji: "🦅", rarity: "Epic",      value: 65 },
+  elephant: { key: "elephant", name: "Elephant", emoji: "🐘", rarity: "Epic",      value: 65 },
+  rhino:    { key: "rhino",    name: "Rhino",    emoji: "🦏", rarity: "Epic",      value: 65 },
   // Legendary (2)
-  dragon:   { key: "dragon",   name: "Dragon",   emoji: "🐉", rarity: "Legendary", value: 250 },
-  unicorn:  { key: "unicorn",  name: "Unicorn",  emoji: "🦄", rarity: "Legendary", value: 250 },
+  dragon:   { key: "dragon",   name: "Dragon",   emoji: "🐉", rarity: "Legendary", value: 200 },
+  unicorn:  { key: "unicorn",  name: "Unicorn",  emoji: "🦄", rarity: "Legendary", value: 200 },
 };
 
 const RARITY_COLOR = {
@@ -372,23 +372,23 @@ function isLuckyActive(user) {
 const SHOP_ITEMS = {
   wildCrate1: {
     key: "wildCrate1", name: "Wild Crate", qty: 1,
-    emoji: "🎁", price: 40, category: "crates",
+    emoji: "🎁", price: 50, category: "crates",
     description: "Contains a random pet. Open with `!crate`.",
   },
   wildCrate5: {
     key: "wildCrate5", name: "Wild Crate ×5", qty: 5,
-    emoji: "🎁", price: 180, category: "crates",
+    emoji: "🎁", price: 225, category: "crates",
     description: "5 Wild Crates at a 10% discount!",
   },
   luckBoost: {
     key: "luckBoost", name: "Luck Boost", qty: 1,
-    emoji: "🍀", price: 100, category: "boosts",
+    emoji: "🍀", price: 200, category: "boosts",
     description: "Boosts rare drop rates for **1 hour**.\nCommon 50% • Rare 30% • Epic 15% • Legendary 5%",
     durationMs: 60 * 60 * 1000,
   },
   cfGuard: {
     key: "cfGuard", name: "Coinflip Guard", qty: 1,
-    emoji: "🔒", price: 100, category: "protection",
+    emoji: "🔒", price: 175, category: "protection",
     description: "Get **50% refund** on your next coinflip loss (1 use).",
   },
 };
@@ -507,31 +507,31 @@ function gamesDisabledEmbed() {
 // =================== DAILY QUESTS ===================
 
 const QUEST_POOL = [
-  // Easy (reward 100–150 coins)
-  { key: 'hunt_3',      type: 'hunt',      desc: 'Hunt 3 times',                  target: 3,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 150 } },
-  { key: 'cf_play_3',   type: 'cf_play',   desc: 'Play coinflip 3 times',          target: 3,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 150 } },
+  // Easy (reward 75–150 coins)
+  { key: 'hunt_3',      type: 'hunt',      desc: 'Hunt 3 times',                  target: 3,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
+  { key: 'cf_play_3',   type: 'cf_play',   desc: 'Play coinflip 3 times',          target: 3,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
   { key: 'earn_500',    type: 'earn',      desc: 'Earn 500 coins',                 target: 500,  difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
-  { key: 'crate_1',     type: 'crate',     desc: 'Open 1 Wild Crate',              target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
-  { key: 'cf_win_1',    type: 'cf_win',    desc: 'Win 1 coinflip',                 target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
-  { key: 'duel_play_1', type: 'duel_play', desc: 'Participate in 1 duel',          target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
-  { key: 'pet_1',       type: 'pet',       desc: 'Obtain any pet',                 target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
-  { key: 'shop_1',      type: 'shop',      desc: 'Purchase an item from the shop', target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 150 } },
-  { key: 'daily_1',     type: 'daily',     desc: 'Claim your daily reward',        target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
+  { key: 'crate_1',     type: 'crate',     desc: 'Open 1 Wild Crate',              target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 75 } },
+  { key: 'cf_win_1',    type: 'cf_win',    desc: 'Win 1 coinflip',                 target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 75 } },
+  { key: 'duel_play_1', type: 'duel_play', desc: 'Participate in 1 duel',          target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 75 } },
+  { key: 'pet_1',       type: 'pet',       desc: 'Obtain any pet',                 target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 75 } },
+  { key: 'shop_1',      type: 'shop',      desc: 'Purchase an item from the shop', target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
+  { key: 'daily_1',     type: 'daily',     desc: 'Claim your daily reward',        target: 1,    difficulty: 'Easy',   reward: { type: 'coins',   amount: 75 } },
   { key: 'msg_25',      type: 'message',   desc: 'Send 25 messages',               target: 25,   difficulty: 'Easy',   reward: { type: 'coins',   amount: 100 } },
-  // Medium (reward 150–300 coins or special item)
-  { key: 'hunt_5',      type: 'hunt',      desc: 'Hunt 5 times',                   target: 5,    difficulty: 'Medium', reward: { type: 'coins',   amount: 250 } },
-  { key: 'earn_1000',   type: 'earn',      desc: 'Earn 1,000 coins',               target: 1000, difficulty: 'Medium', reward: { type: 'coins',   amount: 200 } },
-  { key: 'crate_2',     type: 'crate',     desc: 'Open 2 Wild Crates',             target: 2,    difficulty: 'Medium', reward: { type: 'coins',   amount: 200 } },
-  { key: 'adv_2',       type: 'adventure', desc: 'Complete 2 adventures',          target: 2,    difficulty: 'Medium', reward: { type: 'coins',   amount: 250 } },
-  { key: 'cf_win_3',    type: 'cf_win',    desc: 'Win 3 coinflips',                target: 3,    difficulty: 'Medium', reward: { type: 'cfguard', amount: 1 } },
-  { key: 'duel_win_1',  type: 'duel_win',  desc: 'Win 1 duel',                     target: 1,    difficulty: 'Medium', reward: { type: 'coins',   amount: 300 } },
+  // Medium (reward 100–300 coins or special item)
+  { key: 'hunt_5',      type: 'hunt',      desc: 'Hunt 5 times',                   target: 5,    difficulty: 'Medium', reward: { type: 'coins',   amount: 200 } },
+  { key: 'earn_1000',   type: 'earn',      desc: 'Earn 1,000 coins',               target: 1000, difficulty: 'Medium', reward: { type: 'coins',   amount: 250 } },
+  { key: 'crate_2',     type: 'crate',     desc: 'Open 2 Wild Crates',             target: 2,    difficulty: 'Medium', reward: { type: 'coins',   amount: 100 } },
+  { key: 'adv_2',       type: 'adventure', desc: 'Complete 2 adventures',          target: 2,    difficulty: 'Medium', reward: { type: 'coins',   amount: 200 } },
+  { key: 'cf_win_10',    type: 'cf_win',    desc: 'Win 10 coinflips',                target: 10,    difficulty: 'Medium', reward: { type: 'cfguard', amount: 1 } },
+  { key: 'duel_win_3',  type: 'duel_win',  desc: 'Win 3 duel',                     target: 3,    difficulty: 'Medium', reward: { type: 'coins',   amount: 200 } },
   { key: 'msg_50',      type: 'message',   desc: 'Send 50 messages',               target: 50,   difficulty: 'Medium', reward: { type: 'coins',   amount: 200 } },
   // Hard (reward 300–500 coins or rare item)
-  { key: 'hunt_10',     type: 'hunt',      desc: 'Hunt 10 times',                  target: 10,   difficulty: 'Hard',   reward: { type: 'crate',   amount: 1 } },
+  { key: 'hunt_10',     type: 'hunt',      desc: 'Hunt 10 times',                  target: 10,   difficulty: 'Hard',   reward: { type: 'crate',   amount: 5 } },
   { key: 'earn_5000',   type: 'earn',      desc: 'Earn 5,000 coins',               target: 5000, difficulty: 'Hard',   reward: { type: 'coins',   amount: 500 } },
-  { key: 'crate_5',     type: 'crate',     desc: 'Open 5 Wild Crates',             target: 5,    difficulty: 'Hard',   reward: { type: 'luck',    amount: 1 } },
+  { key: 'crate_20',     type: 'crate',     desc: 'Open 20 Wild Crates',             target: 20,    difficulty: 'Hard',   reward: { type: 'luck',    amount: 1 } },
   { key: 'adv_5',       type: 'adventure', desc: 'Complete 5 adventures',          target: 5,    difficulty: 'Hard',   reward: { type: 'luck',    amount: 1 } },
-  { key: 'rare_pet_1',  type: 'rare_pet',  desc: 'Obtain a Rare+ pet',             target: 1,    difficulty: 'Hard',   reward: { type: 'crate',   amount: 1 } },
+  { key: 'epic_pet_2',  type: 'epic_pet',  desc: 'Obtain 2 Epic+ pets',  target: 2,  difficulty: 'Hard',  reward: { type: 'crate', amount: 5 } },
 ];
 
 const QUEST_BONUS_REWARD = { type: 'crate', amount: 1 };
